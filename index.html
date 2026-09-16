@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZenFlow Labs - Somatic Touch & Affective Neuroscience Tools</title>
+  <meta name="description" content="ZenFlow Labs builds sensory and somatic tools exploring neuroscience-backed touch pacing, tactile rhythms, and parasympathetic calm.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #090d0e;
+      --surface: #101719;
+      --surface-card: #151e21;
+      --border: #223035;
+      --text: #e2e8f0;
+      --text-muted: #8da2ad;
+      --primary: #4edea3;
+      --primary-glow: rgba(78, 222, 163, 0.25);
+      --accent: #38bdf8;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    nav {
+      max-width: 1000px;
+      margin: 0 auto;
+      width: 100%;
+      padding: 2rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-weight: 800;
+      font-size: 1.25rem;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+    }
+    .logo-badge {
+      background: var(--primary);
+      color: #022c22;
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 0.9rem;
+    }
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+      margin-left: 1.5rem;
+    }
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+    main {
+      flex: 1;
+      max-width: 1000px;
+      margin: 0 auto;
+      width: 100%;
+      padding: 3rem 1.5rem 5rem;
+    }
+    .hero {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 4rem;
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(78, 222, 163, 0.1);
+      border: 1px solid rgba(78, 222, 163, 0.25);
+      color: var(--primary);
+      padding: 0.4rem 1rem;
+      border-radius: 9999px;
+      font-size: 0.825rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+    h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.25rem;
+    }
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+    .actions {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.85rem 1.75rem;
+      border-radius: 14px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .btn-primary {
+      background: var(--primary);
+      color: #022c22;
+      box-shadow: 0 4px 20px var(--primary-glow);
+    }
+    .btn-primary:hover {
+      background: #62ebb3;
+      transform: translateY(-2px);
+    }
+    .btn-secondary {
+      background: var(--surface-card);
+      border: 1px solid var(--border);
+      color: #fff;
+    }
+    .btn-secondary:hover {
+      background: #1e2a2e;
+      border-color: #3b5057;
+      transform: translateY(-2px);
+    }
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 2rem;
+      transition: border-color 0.2s;
+    }
+    .card:hover {
+      border-color: rgba(78, 222, 163, 0.4);
+    }
+    .card-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .card h3 {
+      font-size: 1.2rem;
+      color: #fff;
+      margin-bottom: 0.5rem;
+    }
+    .card p {
+      color: var(--text-muted);
+      font-size: 0.925rem;
+      line-height: 1.6;
+    }
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.875rem;
+      display: flex;
+      justify-content: space-between;
+      max-width: 1000px;
+      margin: 0 auto;
+      width: 100%;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    footer a {
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    footer a:hover {
+      color: var(--primary);
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/" class="logo">
+      <div class="logo-badge">&sim;</div>
+      ZenFlow Labs
+    </a>
+    <div class="nav-links">
+      <a href="/privacy.html">Privacy Policy</a>
+      <a href="https://github.com/hnawar/ct-flow" target="_blank" rel="noopener">CT-Flow App</a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div class="pill">&bull; Research & Somatic Engineering</div>
+      <h1>Tools for Human Calm & Tactile Rhythms</h1>
+      <p>ZenFlow Labs builds sensory training software based on affective neuroscience. We design minimalist, private applications that cultivate somatic awareness and optimal physiological calm.</p>
+      <div class="actions">
+        <a href="/privacy.html" class="btn btn-primary">Read Privacy Policy &rarr;</a>
+        <a href="https://github.com/hnawar/ct-flow" class="btn btn-secondary" target="_blank" rel="noopener">CT-Flow Repository &nearr;</a>
+      </div>
+    </section>
+
+    <div class="feature-grid">
+      <div class="card">
+        <div class="card-icon">🧠</div>
+        <h3>Affective Touch Research</h3>
+        <p>Exploring C-tactile afferent stimulation at optimal speeds (~3 cm/s) to promote parasympathetic activation and natural oxytocin release.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">🔒</div>
+        <h3>100% Privacy by Design</h3>
+        <p>Our applications operate completely offline. No tracking, no user accounts, no ads, and zero transmission of personal data.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">🎯</div>
+        <h3>Millimeter Precision</h3>
+        <p>Built-in physical screen calibration tools ensuring tactile pacing is physically accurate to standard SI units on any device.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div>&copy; 2026 ZenFlow Labs. Registered Domain: ZenFlowLabs.co.uk</div>
+    <div>
+      <a href="/privacy.html">Privacy Statement</a> &bull;
+      <a href="https://github.com/hnawar/ct-flow">CT-Flow</a>
+    </div>
+  </footer>
+</body>
+</html>
